@@ -5,7 +5,6 @@ root=Tk()
 conn = sqlite3.connect('test1.db')
 cursor=conn.cursor()
 print("database has opened successfully");
-#conn.execute('''create table login_f('Email' varchar(30),'Mobile' int(10))''')
 print("Table has created.")
 root.title("FOOD SERVICE:")
 Font= ('monotype corsiva',15, 'bold')
@@ -43,7 +42,6 @@ def clear():
     root.config(bg="pink")
      
     def but1():
-#       conn.execute('''create table veg_hotel('name' varchar(20),'address' varchar(50))''')
         l=Label(root,text="Hotel Name:",font=Font,width='25',bg="pink",foreground="blue")
         l1=Label(root,text="Address :",font=Font,width='25',bg="pink",foreground="blue")
         l.place(x=100,y=400)
@@ -146,8 +144,7 @@ def clear():
             lsh1.place(x=10,y=100)
             ec=Entry(root,width="30")
             ec.place(x=300,y=105)
-        #    conn.execute('''create table food_insert11('name' varchar(20))''')
-
+     
             c2=Canvas(root,height="600",width="600",bg="pink")
             c2.place(x=850,y=100)
             i1=Image.open("Punjabi dish.jpg")
@@ -185,7 +182,7 @@ def clear():
                 bc2.destroy()
                 c2.destroy()
                 lsh.destroy()
-                #def choose():
+              
                 lshc=Label(root,text="Choose Your Favourite Food",bg="pink",font=font1,width="200")
                 lshc.pack()
                 lsh1c=Label(root,text="Select Food From Here:",bg="pink",font=font2,foreground="blue")
@@ -195,7 +192,7 @@ def clear():
                 wn= OptionMenu(root, variable11, *OPTIONS)
                 wn.place(x=270,y=105)
                 def msg3(*args):
-                 #   conn.execute('''create table food_store1('name' varchar(20),'price' int)''')
+               
                     t=variable11.get()
                     c1=Canvas(root,height="600",width="500",bg="white")
                     c1.place(x=400,y=100)
@@ -264,7 +261,6 @@ def clear():
     b11.place(x=120,y=130)
     b11.config(height=3, width=10)
     def but2():
-  #      conn.execute('''create table nonveg_hotel('name' varchar(20),'address' varchar(50))''')
         l=Label(root,text="Hotel Name:",font=Font,width='25',bg="pink",foreground="blue")
         l1=Label(root,text="Address :",font=Font,width='25',bg="pink",foreground="blue")
         l.place(x=100,y=400)
@@ -375,8 +371,7 @@ def clear():
             c2.create_image(0,0,anchor=NW,image=i)
             c2.i=i
             
-         #   conn.execute('''create table food_insert1('name' varchar(20))''')
-            def choose():
+   
                 gc=ec.get()
                 conn.execute('''insert into food_insert1(name)values (?)''',(gc,))
                 ec.delete(0,END)
